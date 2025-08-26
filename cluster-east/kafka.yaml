@@ -79,19 +79,9 @@ spec:
             - /bin/sleep
             - infinity
           resources: {}
-          volumeMounts:
-            - name: secret-volume
-              mountPath: /etc/sleep/tls
           terminationMessagePath: /dev/termination-log
           terminationMessagePolicy: File
           imagePullPolicy: IfNotPresent
-      serviceAccount: sleep
-      volumes:
-        - name: secret-volume
-          secret:
-            secretName: sleep-secret
-            defaultMode: 420
-            optional: true
       dnsPolicy: ClusterFirst
   strategy:
     type: Recreate
