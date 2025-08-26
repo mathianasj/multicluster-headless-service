@@ -3,6 +3,9 @@ kind: Kafka
 metadata:
   name: my-cluster
   namespace: sample
+  annotations:
+    strimzi.io/node-pools: enabled
+    strimzi.io/kraft: enabled
 spec:
   entityOperator:
     topicOperator: {}
