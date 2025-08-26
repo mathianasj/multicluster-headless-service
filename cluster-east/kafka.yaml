@@ -68,7 +68,6 @@ spec:
         sidecar.istio.io/logLevel: debug
     spec:
       restartPolicy: Always
-      serviceAccountName: sleep
       schedulerName: default-scheduler
       terminationGracePeriodSeconds: 0
       securityContext: {}
