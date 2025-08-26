@@ -1,0 +1,37 @@
+kind: Service
+apiVersion: v1
+metadata:
+  name: my-cluster-kafka-brokers
+  namespace: sample
+spec:
+  clusterIP: None
+  publishNotReadyAddresses: true
+  ipFamilies:
+    - IPv4
+  ports:
+    - name: tcp-ctrlplane
+      protocol: TCP
+      port: 9090
+      targetPort: 9090
+    - name: tcp-replication
+      protocol: TCP
+      port: 9091
+      targetPort: 9091
+    - name: tcp-kafkaagent
+      protocol: TCP
+      port: 8443
+      targetPort: 8443
+    - name: tcp-clients
+      protocol: TCP
+      port: 9092
+      targetPort: 9092
+    - name: tcp-clientstls
+      protocol: TCP
+      port: 9093
+      targetPort: 9093
+  internalTrafficPolicy: Cluster
+  clusterIPs:
+    - None
+  type: ClusterIP
+  ipFamilyPolicy: SingleStack
+  sessionAffinity: None
