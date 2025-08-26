@@ -73,7 +73,7 @@ spec:
       securityContext: {}
       containers:
         - name: sleep
-          image: wurstmeister/kafka
+          image: registry.redhat.io/amq-streams/kafka-40-rhel9@sha256:b5af92487bc591bd2d3e785817f3e70e1050dc71e97964689b4783ca97644f91
           command:
             - /bin/sleep
             - infinity
